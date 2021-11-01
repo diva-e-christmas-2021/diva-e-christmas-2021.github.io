@@ -6,6 +6,7 @@
                 display: block;
                 box-sizing: border-box;
                 font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif;
+                font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
             }
 
             * { 
@@ -30,19 +31,27 @@
 
             .video-foreground {
                 position: relative;
-                max-height: calc(100vh - 270px);
+                max-height: calc(100vh - 220px);
             }
             .content {
                 flex: 1 1 auto;
+                flex-wrap: wrap;
                 background-color: black;
                 color: white;
 
                 display: flex;
+                padding: 20px 100px 0;
+                z-index: 1;
             }
 
-            .content > * {
-                flex:  0 0 auto;
-                padding: 20px 100px;
+            .content > .w100 {
+                flex:  0 0 100%;
+                padding: 20px 20px 0;
+            }
+
+            .content > .w50 {
+                flex:  1 1 auto;
+                padding: 0 20px;
             }
 
             .screen {
@@ -59,6 +68,12 @@
                 height: 100%;
                 top: 0;
                 width: 100%;
+
+                transform: scale(1.275) translateY(-1%);
+            }
+
+            p {
+                margin-top: 0;
             }
         </style>
     </head>
@@ -69,22 +84,35 @@
                     <iframe src="https://www.youtube.com/embed/fGtGwkRhv1M?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=fGtGwkRhv1M" frameborder="0" allowfullscreen></iframe>
                 </div>
                 <div class="content">
-                    <div>
-                        <p style="font-size: 1.5rem;">🎁  diva-e Mitarbeiter:innen packen <b>Weihnachtspäckchen für Kinder in Osteuropa</b> 🎁</p>
-    
-                        <p>Abgabe bis spätestens 12.11.2021</p>
-    
-                        <p>Verantwortlich an den Standorten sind:</p>
-    
-                        <p>
-                        Berlin - Anna Würthner | Frankfurt - Cordula Medler | Hamburg - du? | Jena - Christin Frauendorf<br>
-    
-                        Karlsruhe - Marcel Erbe | Leipzig - Carolina Erdmann | München - Jennifer Schreder | Stuttgart - du?
-                        </p>
+                    <div class="w50">
+                        <b>Altersangaben auf dem Päckchen:</b>
+                        <p>3-6 | 7-10 | 11-15 Jahre</p>
+
+                        <b>Genderangabe auf dem Päckchen:</b>
+                        <p>weiblich | männlich | beides</p>
+                    </div>
+                    <div class="w50">
+                        <p><b>Was genau? Ein Schuhkarton mit Inhalt wie:</b></p>
+                        <ul>
+                            <li>Spielsachen, z.B. Würfel- und Kartenspiele, Aufkleber, Jojos, Teddys, Spielzeugautos, Tennisbälle, Seifenblasen</li>
+                            <li>neue Kinderkleidung, z.B. Mützen, Handschuhe, Schals, Sportsachen</li>
+                            <li>gebrauchte Kleidung bitte nur in sehr gutem Zustand und absolut sauber!</li>
+                            <li>Hygieneartikel wie Zahnpasta, Zahnbürste und Waschzeug</li>
+                            <li>Mal- und Schreibutensilien, Schulbedarf</li>
+                            <li>Geldbeutel, Tagebücher, Kalender, Alben</li>
+                            <li>Süßigkeiten</li>
+                        </ul>
+                    </div>
+                    <div class="w50">
+                        <p><b>Bitte NICHT einpacken:</b></p>
+                        <ul>
+                            <li>deutschsprachige Bücher</li>
+                            <li>Spiele mit komplizierten Anleitungen</li>
+                            <li>Spielzeug mit Elektro- und/oder Batterieantrieb</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </body>
 </html>
-
