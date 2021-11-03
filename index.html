@@ -1,3 +1,24 @@
+<script language="javascript" type="text/javascript">
+
+let vergangenezeit = 20;
+function timer() {
+	if(vergangenezeit%2 != 0){ausblenden()}
+    else {einblenden()}
+	vergangenezeit++;
+}
+
+function ausblenden(){
+    document.getElementById('page-2').style.display='none' 
+    document.getElementById('page-1').style.display='flex' 
+}
+
+function einblenden(){
+    document.getElementById('page-1').style.display='none' 
+    document.getElementById('page-2').style.display='flex' 
+}
+setInterval(timer, 10000);
+</script>
+
 <html>
     <head>
         <style>
@@ -83,7 +104,7 @@
                 <div class="video-foreground">
                     <iframe src="https://www.youtube.com/embed/fGtGwkRhv1M?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=fGtGwkRhv1M" frameborder="0" allowfullscreen></iframe>
                 </div>
-                <div class="content">
+                <div class="content" id="page-2" style="display: none;">
                     <div class="w50">
                         <b>Altersangaben auf dem Päckchen:</b>
                         <p>3-6 | 7-10 | 11-15 Jahre</p>
@@ -110,6 +131,17 @@
                             <li>Spiele mit komplizierten Anleitungen</li>
                             <li>Spielzeug mit Elektro- und/oder Batterieantrieb</li>
                         </ul>
+                    </div>
+                </div>
+                <div class="content" id="page-1" style="display: flex;">
+                    <div>
+                        <p style="font-size: 1.5rem;">🎁  diva-e Mitarbeiter:innen packen <b>Weihnachtspäckchen für Kinder in Osteuropa</b> 🎁</p>
+                        <p>Abgabe bis spätestens 12.11.2021</p>
+                        <p>Verantwortlich an den Standorten sind:</p>
+                        <p>
+                        Berlin - Anna Würthner | Frankfurt - Cordula Medler | Hamburg - du? | Jena - Christin Frauendorf<br>
+                        Karlsruhe - Marcel Erbe | Leipzig - Carolina Erdmann | München - Jennifer Schreder | Stuttgart - du?
+                        </p>
                     </div>
                 </div>
             </div>
