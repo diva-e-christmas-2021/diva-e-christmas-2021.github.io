@@ -2,165 +2,58 @@
 <html>
     <head>
         <style>
-            root,body {
+            body {
                 margin: 0;
-                display: block;
-                box-sizing: border-box;
-                font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif;
-                font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+                font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,Helvetica Neue,Arial,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
             }
 
-            * { 
-                box-sizing: border-box; 
-            }
-            .video-background {
-                position: relative;
-                background: #000;
-
-                display: flex;
-                flex-direction: column;
+            .image {
                 width: 100%;
-            }
-
-            .video-foreground::after {
-                content: '';
-                display: block;
-                width: 100%;
-                height: 0;
-                padding-bottom: 53%;
-            }
-
-            .video-foreground {
-                position: relative;
-                max-height: calc(100vh - 220px);
-            }
-            .content {
-                flex: 1 1 auto;
-                flex-wrap: wrap;
-                background-color: black;
-                color: white;
-
-                display: flex;
-                padding: 20px 100px 0;
-                z-index: 1;
-            }
-
-            .content > .w100 {
-                flex:  0 0 100%;
-                padding: 20px 20px 0;
-            }
-
-            .content > .w50 {
-                flex:  1 1 auto;
-                padding: 0 20px;
-            }
-
-            .screen {
-                position: relative;
-                width: 100vw;
-                height: 100vh;
-                left: 0;
-                top: 0;
-                display: flex;
-            }
-
-            iframe {
-                position: absolute;
                 height: 100%;
-                top: 0;
-                width: 100%;
-
-                transform: scale(1.275) translateY(-1%);
+                object-fit: fill;
+                object-position: center;
             }
 
-            p {
+            .qr {
+                position: absolute;
+                top: 70px;
+                right: 100px;
+                border: 3px solid black;
+                transform: rotate(15deg);
+            }
+            .text {
+                color: white;
+                background: black;
+                position: absolute;
+                left: 100px;
+                bottom: 50px;
+                padding: 30px 30px;
+                max-width: 35%;
+                box-shadow: 0px 10px 20px rgb(0 0 0 / 50%);
+                border-radius: 5px;
+            }
+
+            .text h1 span {
+                font-weight: normal;
+            }
+
+            .text h1 {
                 margin-top: 0;
-            }
-
-
-            #page-1 {
-                position: absolute;
-                bottom: 0;
-                width: 100%;
-
-                animation: pulse 20s infinite;
-            }
-
-            #page-2 {
-                position: absolute;
-                bottom: 0;
-                width: 100%;
-
-                animation: pulse 20s infinite;
-                animation-delay: 10s
-            }
-
-            @keyframes pulse {
-                0% {
-                    
-                    opacity: 0;
-                }
-                50% {
-                    
-                    opacity: 0;
-                }
-                51% {
-                    
-                    opacity: 1;
-                }
-                100% {
-                    
-                    opacity: 1;
-                }
             }
         </style>
     </head>
     <body>
-        <div class="screen">    
-            <div class="video-background">
-                <div class="video-foreground">
-                    <iframe src="https://www.youtube.com/embed/fGtGwkRhv1M?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=fGtGwkRhv1M" frameborder="0" allowfullscreen></iframe>
-                </div>
-                <div class="content" id="page-2">
-                    <div class="w50">
-                        <b>Altersangaben auf dem Päckchen:</b>
-                        <p>3-6 | 7-10 | 11-15 Jahre</p>
+        <img class="image" src="https://images.theconversation.com/files/380799/original/file-20210127-17-if809z.jpg?ixlib=rb-1.1.0&rect=44%2C426%2C5000%2C2500&q=45&auto=format&w=1356&h=668&fit=crop">
 
-                        <b>Genderangabe auf dem Päckchen:</b>
-                        <p>weiblich | männlich | beides</p>
-                    </div>
-                    <div class="w50">
-                        <p><b>Was genau? Ein Schuhkarton mit Inhalt wie:</b></p>
-                        <ul>
-                            <li>Spielsachen, z.B. Würfel- und Kartenspiele, Aufkleber, Jojos, Teddys, Spielzeugautos, Tennisbälle, Seifenblasen</li>
-                            <li>neue Kinderkleidung, z.B. Mützen, Handschuhe, Schals, Sportsachen</li>
-                            <li>gebrauchte Kleidung bitte nur in sehr gutem Zustand und absolut sauber!</li>
-                            <li>Hygieneartikel wie Zahnpasta, Zahnbürste und Waschzeug</li>
-                            <li>Mal- und Schreibutensilien, Schulbedarf</li>
-                            <li>Geldbeutel, Tagebücher, Kalender, Alben</li>
-                            <li>Süßigkeiten</li>
-                        </ul>
-                    </div>
-                    <div class="w50">
-                        <p><b>Bitte NICHT einpacken:</b></p>
-                        <ul>
-                            <li>deutschsprachige Bücher</li>
-                            <li>Spiele mit komplizierten Anleitungen</li>
-                            <li>Spielzeug mit Elektro- und/oder Batterieantrieb</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="content" id="page-1">
-                    <div>
-                        <p style="font-size: 1.5rem;">🎁  diva-e Mitarbeiter:innen packen <b>Weihnachtspäckchen für Kinder in Osteuropa</b> 🎁</p>
-                        <p>Abgabe bis spätestens 12.11.2021</p>
-                        <p>Verantwortlich an den Standorten sind:</p>
-                        <p>
-                        Berlin - Anna Würthner | Frankfurt - Cordula Medler | Hamburg - du? | Jena - Christin Frauendorf<br>
-                        Karlsruhe - Marcel Erbe | Leipzig - Carolina Erdmann | München - Jennifer Schreder | Stuttgart - du?
-                        </p>
-                    </div>
-                </div>
+        <img class="qr" src="data:image/png;base64,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">
+
+        <div class="text">
+            <h1>diva-e Schrittzählaktion <span>(13.12 - 19.12)<span></h1>
+            <div style="line-height: 1.5;">
+                Jeder Schritt zählt! Pro 10.000 Schritte spendet diva-e 5 EUR.<br>Tragt einfach unter folgendem Link (QR-CODE) eure Schritte ein.<br>Gerne auch bis <b>20.12 um 12 Uhr</b> nachtragen. 
+
+                <br><br>
+                Mehr infos bei euren CSR Teams 
             </div>
         </div>
     </body>
